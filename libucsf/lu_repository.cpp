@@ -652,7 +652,8 @@ bool PPProject::parseDTAs ( const string& uploadName )
 					double mhPlus;
 					int charge;
 					if ( ist >> mhPlus ) {
-						if ( ( ist >> charge ) == 0 ) charge = 1;
+						ist >> charge;
+						if ( charge == 0 ) charge = 1;
 						double mOZ = mPlusHToMOverZ ( mhPlus, charge, true );
 						processDTAPKLHeader ( osf, files [k], mOZ, charge, 0.0 );
 						break;
@@ -694,7 +695,8 @@ bool PPProject::parseDTAs2 ( const string& uploadName )
 					double mhPlus;
 					int charge;
 					if ( ist >> mhPlus ) {
-						if ( ( ist >> charge ) == 0 ) charge = 1;
+						ist >> charge;
+						if ( charge == 0 ) charge = 1;
 						double mOZ = mPlusHToMOverZ ( mhPlus, charge, true );
 						processDTAPKLHeader ( osf, "Scan " + gen_itoa ( scan ), mOZ, charge, 0.0 );
 						flag = true;
@@ -739,7 +741,8 @@ bool PPProject::parsePKLs ( const string& uploadName )
 					int charge;
 					if ( ist >> mOZ ) {
 						if ( ist >> intensity ) {
-							if ( ( ist >> charge ) == 0 ) charge = 1;
+							ist >> charge;
+							if ( charge == 0 ) charge = 1;
 							processDTAPKLHeader ( osf, files [k], mOZ, charge, intensity );
 							break;
 						}
@@ -778,7 +781,9 @@ bool PPProject::parsePKLs2 ( const string& uploadName )
 					int charge;
 					if ( ist >> mOZ ) {
 						if ( ist >> intensity ) {
-							if ( ( ist >> charge ) == 0 ) charge = 1;
+							ist >> charge;
+							if ( charge == 0 ) charge = 1;
+
 							processDTAPKLHeader ( osf, "Scan " + gen_itoa ( scan ), mOZ, charge, intensity );
 							flag = true;
 							scan++;

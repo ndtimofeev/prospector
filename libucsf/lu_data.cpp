@@ -160,7 +160,8 @@ void DataReader::readParentData ( int charge, int isotopeOffset )
 				double mOZ;
 				if ( ist >> mOZ ) {
 					if ( charge == 0 ) {			// Read the charge from the file
-						if ( ( ist >> charge ) == 0 ) charge = 1;
+						ist >> charge;
+						if ( charge == 0 ) charge = 1;
 					}
 					if ( isotopeOffset != 0 ) mOZ += ( isotopeOffset * 1.0029 / charge );
 					msmsDataPoint.setPrecursor ( mOZ, charge, 100.0 );
@@ -1468,7 +1469,8 @@ void PKLDataReader::readParentData ( int charge, int isotopeOffset )
 			if ( ist >> mOZ ) {
 				if ( ist >> intensity ) {
 					if ( charge == 0 ) {			// Read the charge from the file
-						if ( ( ist >> charge ) == 0 ) charge = 1;
+						ist >> charge;
+						if ( charge == 0 ) charge = 1;
 					}
 					if ( isotopeOffset != 0 ) mOZ += ( isotopeOffset * 1.0029 / charge );
 					msmsDataPoint.setPrecursor ( mOZ, charge, intensity );
@@ -1507,7 +1509,8 @@ void DTADataReader::readParentData ( int charge, int isotopeOffset )
 			double mhPlus;
 			if ( ist >> mhPlus ) {
 				if ( charge == 0 ) {			// Read the charge from the file
-					if ( ( ist >> charge ) == 0 ) charge = 1;
+					ist >> charge;
+					if ( charge == 0 ) charge = 1;
 				}
 				double mOZ = mPlusHToMOverZ ( mhPlus, charge, true );
 				if ( isotopeOffset != 0 ) mOZ += ( isotopeOffset * 1.0029 / charge );

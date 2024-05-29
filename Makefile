@@ -40,9 +40,10 @@ APP_COMP_OPTIONS=COMPILER=$(COMPILER) $(A_COMP_OPTIONS)
 MPI_APP_COMP_OPTIONS=COMPILER=$(MPI_COMPILER) $(A_COMP_OPTIONS)
 
 all:
+	mkdir -p lib bin
 	make -C libzip -f libzip.linux.make $(C_LIB_COMP_OPTIONS)
-	make -C libsqlite -f libsqlite.linux.make $(C_LIB_COMP_OPTIONS)
-	make -C libexpat -f libexpat.linux.make $(LIB_COMP_OPTIONS)
+	#make -C libsqlite -f libsqlite.linux.make $(C_LIB_COMP_OPTIONS)
+	#make -C libexpat -f libexpat.linux.make $(LIB_COMP_OPTIONS)
 	make -C libdbase -f libdbase.linux.make $(LIB_COMP_OPTIONS)
 	make -C libgen -f libgen.linux.make $(LIB_COMP_OPTIONS)
 	make -C libnrec -f libnrec.linux.make $(LIB_COMP_OPTIONS)

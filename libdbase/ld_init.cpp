@@ -37,7 +37,7 @@
 #include <lu_repository.h>
 #include <lu_xml.h>
 #include <ld_init.h>
-#include <my_global.h>
+//#include <my_global.h>
 #include <mysql.h>
 #include <errmsg.h>
 using std::cout;

@@ -2136,7 +2136,7 @@ double PeptideSpectralInfo::getExpectationValue ( double score ) const
 		else
 			e = 1.0 - exp ( -exp ( (- 1 / b) * (score - a) ) );	// Method of moments
 		e *= numPrecursor;
-		if ( isnan ( e ) ) e = -1.0;
+		if ( std::isnan ( e ) ) e = -1.0;
 	}
 	return e;
 }
@@ -3627,7 +3627,7 @@ double SearchResults::getEval ( double score, double a, double b, int numSpectra
 		else
 			e = 1.0 - exp ( -exp ( (- 1 / b) * (score - a) ) );	// Method of moments
 		e *= numSpectra;
-		if ( isnan ( e ) ) e = -1.0;
+		if ( std::isnan ( e ) ) e = -1.0;
 	}
 	return e;
 }

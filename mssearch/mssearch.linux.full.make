@@ -27,7 +27,7 @@ STATIC=
 LLIB=
 INCLUDEDIRS=-I../include
 LIBDIRS=-L../lib
-LIBS=-lraw -lucsf -lsingle -ldbase -lgen -lnrec -lzip -lm -lz -lexpat -lmysqlclient -lraw -lpthread -lsqlite $(LLIB)
+LIBS=-lraw -lucsf -lsingle -ldbase -lgen -lnrec -lzip -lm -lz -lexpat -lmysqlclient -lraw -lpthread -lsqlite3 -lmpi_cxx -lmpi $(LLIB)
 
 all:
 	$(COMPILER) $(OPTIONS) $(ADD_OPTIONS) -c $(INCLUDEDIRS) mssearch_main.cpp -o mssearch_main.o

@@ -27,9 +27,10 @@
 #include <string>
 #include <lgen_define.h>
 
-struct st_mysql;						// forward definitions so mysql header files not required
-typedef struct st_mysql MYSQL;
-typedef char **MYSQL_ROW;		/* return data as array of strings */
+//struct st_mysql;						// forward definitions so mysql header files not required
+//typedef struct st_mysql MYSQL;
+//typedef char **MYSQL_ROW;		/* return data as array of strings */
+#include <mysql/mysql.h>
 
 class UserInfo {
 	std::string userID;

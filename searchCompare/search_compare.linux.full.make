@@ -27,7 +27,7 @@ STATIC=
 LLIB=
 INCLUDEDIRS=-I. -I../include
 LIBDIRS=-L../lib
-LIBS=-lraw -lucsf -ldbase -lgen -lnrec -lm -lexpat -lmysqlclient -lz -lraw -lpthread -lsqlite $(LLIB)
+LIBS=-lraw -lucsf -ldbase -lgen -lnrec -lm -lexpat -lmysqlclient -lz -lraw -lpthread -lsqlite3 $(LLIB)
 
 all:
 	$(COMPILER) $(OPTIONS) $(ADD_OPTIONS) -c $(INCLUDEDIRS) sc_anum_res.cpp -o sc_anum_res.o

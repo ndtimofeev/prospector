@@ -26,7 +26,7 @@ ADD_OPTIONS=
 STATIC=
 INCLUDEDIRS=-I../include
 LIBDIRS=-L../lib
-LIBS=-lucsf -lgen -lnrec -lm -lexpat -lpthread -lsqlite -ldl -lz
+LIBS=-lucsf -lgen -lnrec -lm -lexpat -lpthread -lsqlite3 -ldl -lz
 
 all:
 	$(COMPILER) $(OPTIONS) $(ADD_OPTIONS) -c $(INCLUDEDIRS) make_param_db_main.cpp -o make_param_db_main.o

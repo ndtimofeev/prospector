@@ -28,7 +28,7 @@ MPILIB=-lmpich
 LLIB=
 INCLUDEDIRS=-I../include
 LIBDIRS=-L../lib
-LIBS=-lraw -lucsf -lmulti -ldbase -lgen -lnrec -lzip -lm -lz $(MPILIB) -lexpat -lmysqlclient -lraw -lpthread -lsqlite $(LLIB)
+LIBS=-lraw -lucsf -lmulti -ldbase -lgen -lnrec -lzip -lm -lz $(MPILIB) -lexpat -lmysqlclient -lraw -lpthread -lsqlite3 $(LLIB)
 
 all:
 	$(COMPILER) $(OPTIONS) $(ADD_OPTIONS) -c $(INCLUDEDIRS) mssearch_main.cpp -o mssearch_main.o
